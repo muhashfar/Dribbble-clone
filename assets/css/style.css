@@ -13,15 +13,23 @@ header {
 
 /* Navbar Styles */
 .navbar {
-  background-color: #fff;
-  padding: 10px 0;
+  width: 100%;
+  position: -webkit-fixed; /* For Safari */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Ensure it stays above other content */
+  background: rgba(255, 255, 255, 0.39);
+  backdrop-filter: blur(10.7px);
+  -webkit-backdrop-filter: blur(10.7px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.24);
 }
 
 .navbar-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -40,16 +48,21 @@ header {
 
 .navbar-links li {
   margin: 0;
+  padding: 5px 10px;
 }
 
 .navbar-links li a {
   color: #333;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 14px;
 }
 
 .navbar-links li a:hover {
   color: #ea4c89;
+  background-color: #f3f3f6;
+  padding: 5px 15px;
+  border-radius: 30px;
 }
 
 .navbar-actions {
@@ -60,9 +73,10 @@ header {
 .navbar-login,
 .navbar-signup {
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
   padding: 8px 16px;
-  border-radius: 4px;
+  border-radius: 50px;
+  font-size: 14px;
 }
 
 .navbar-login {
