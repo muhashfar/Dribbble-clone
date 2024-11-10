@@ -1,5 +1,5 @@
 body {
-  font-family: 'Proxima Nova', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Mona Sans', sans-serif;
   background-color: #fff;
   color: #333;
   margin: 0;
@@ -80,23 +80,6 @@ nav .logo {
   display: block;
 }
 
-#load-more {
-  display: block;
-  margin: 20px auto;
-  padding: 10px 20px;
-  background-color: #ea4c89;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.2s;
-}
-
-#load-more:hover {
-  background-color: #d63c75;
-}
-
 /* Search icon */
 .feather.feather-search {
   background: #ea4c89;
@@ -107,20 +90,15 @@ nav .logo {
   margin-right: 5px;
 }
 
-#suggestions-container {
-  border: 1px solid #ccc;
-  max-height: 200px;
-  overflow-y: auto;
-  position: absolute;
-  background-color: white;
-  width: 100%;
+/* Path: category hover */
+a {
+  text-decoration: none;
+  color: #000;
 }
-
-.suggestion-item {
-  padding: 10px;
-  cursor: pointer;
+.category-item:hover {
+  background: #f3f3f6;
+  border-radius: 30px;
 }
-
-.suggestion-item:hover {
-  background-color: #f0f0f0;
+.category-item a:hover {
+  text-decoration: none;
 }

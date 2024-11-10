@@ -1,8 +1,8 @@
 ---
 layout: default
 ---
-<div style="display: flex; justify-content: center; max-width: 50%; margin: 20px auto; text-align: center; padding-top: 30px;">
-  <span style="font-size: 64px;">Discover the world's top designers</span>
+<div style="display: flex; justify-content: center; max-width: 50%; margin: 20px auto; text-align: center; padding-top: 20px;">
+  <span style="font-size: 64px; font-family: 'Source Serif 4', serif; font-weight: 600; color: #000;">Discover the world's top designers</span>
 </div>
 <div style="display: flex; justify-content: center; text-align: center;">
   <span>Explore work from the most talented and accomplished designers ready to take on your next project</span>
@@ -12,10 +12,13 @@ layout: default
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
 </div>
 
-<div id="suggestions-container"></div>
+<div class="category" style="display: flex; justify-content: center; margin: 10px auto; font-size: 14px; margin-top: 30px; max-width: 80%;">
+  {% for category in site.categories %}<a href=""><span class="category-item" style="margin: 5px; font-weight: 600; padding: 5px 15px;">{{ category }}</span>{% endfor %}</a>
+</div>
+
 
 <div class="post-list">
-  {% for post in site.posts limit:10 %}
+  {% for post in site.posts %}
     <div style="display: block;">
       <div style="background: url('{{ site.baseurl }}{{ post.image }}'); border-radius: 10px; height: 240px; width: 320px; background-repeat: no-repeat; background-position: center; background-size: cover;">
       </div>
@@ -23,4 +26,3 @@ layout: default
     </div>
   {% endfor %}
 </div>
-<button id="load-more">Load More</button>
