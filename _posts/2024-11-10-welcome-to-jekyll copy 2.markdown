@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "Flight booking apps UI design"
 date:   2024-11-10 14:44:35 +0530
-categories: Art
+category: Art
 image: "assets/images/1.jpg"
-tags: "fe, sgs, sgfws, grwrf, bdesbr"
+author: 'John Doe'
 ---

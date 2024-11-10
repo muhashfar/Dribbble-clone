@@ -29,6 +29,8 @@ github_username:  jekyll
 collections:
   tags:
     output: true
+  authors:
+    output: true
 
 # Build settings
 plugins:

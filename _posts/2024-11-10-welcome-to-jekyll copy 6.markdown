@@ -1,7 +1,8 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "Axian ~ Creative studio"
 date:   2024-11-10 14:44:35 +0530
-categories: Template
-image: "assets/images/1.jpg"
+category: Template
+image: "assets/images/5.jpg"
+author: 'John Doe'
 ---

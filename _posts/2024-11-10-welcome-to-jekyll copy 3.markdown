@@ -1,7 +1,8 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
-date:   2024-11-10 14:44:35 +0530
-categories: 'Painting'
-image: "assets/images/1.jpg"
+title:  "Newer UI Design Practises"
+date:   2024-10-10 14:44:35 +0530
+category: 'Painting'
+image: "assets/images/3.png"
+author: 'John Doe'
 ---

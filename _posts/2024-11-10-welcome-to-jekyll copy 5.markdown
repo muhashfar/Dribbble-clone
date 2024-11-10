@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
-date:   2024-11-10 14:44:35 +0530
-categories: Themes
-image: "assets/images/1.jpg"
+title:  "Knife ~ A logo adaptation"
+date:   2024-9-10 14:44:35 +0530
+category: Themes
+image: "assets/images/4.jpg"
 ---

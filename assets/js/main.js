@@ -42,3 +42,5 @@ function displaySuggestions(suggestions) {
       suggestionsContainer.appendChild(suggestionItem);
   });
 }
+
+

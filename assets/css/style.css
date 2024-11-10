@@ -30,6 +30,7 @@ nav .logo {
 
 .search-bar:hover {
   border: 3px solid #ea4c898a;
+  background-color: #fff;
 }
 
 .search-bar input {
@@ -51,7 +52,7 @@ nav .logo {
 .post-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
+  gap: 25px;
   padding: 20px;
 }
 

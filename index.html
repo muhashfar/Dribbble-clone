@@ -8,7 +8,7 @@ layout: default
   <span>Explore work from the most talented and accomplished designers ready to take on your next project</span>
 </div>
 <div class="search-bar">
-  <input id="search-bar" type="text" placeholder="What are you looking for?">
+  <input id="search-input" type="text" placeholder="What are you looking for?">
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
 </div>
 
@@ -16,13 +16,29 @@ layout: default
   {% for category in site.categories %}<a href=""><span class="category-item" style="margin: 5px; font-weight: 600; padding: 5px 15px;">{{ category }}</span>{% endfor %}</a>
 </div>
 
+<ul id="results-container"></ul>
 
-<div class="post-list">
+<div class="post-list">  
   {% for post in site.posts %}
     <div style="display: block;">
-      <div style="background: url('{{ site.baseurl }}{{ post.image }}'); border-radius: 10px; height: 240px; width: 320px; background-repeat: no-repeat; background-position: center; background-size: cover;">
+      <div style="background: url('{{ site.baseurl }}{{ post.image }}'); border-radius: 10px; height: 240px; width: 100%; background-repeat: no-repeat; background-position: center; background-size: cover;">
       </div>
-      <div style="display: inline-flex; margin-top: 8px;"><div style="background-color: #ccc; height: 25px; width: 25px; border-radius: 50%;"></div><span style="margin-left: 10px; margin-top: 5px;">{{ post.title }}</span></div>
+      {% assign author = site.authors | where: "name", post.author | first %}    
+      <div style="display: inline-flex; margin-top: 8px; width: 100%;">
+        {% if post.author %}
+        <div style="background: url('{{ site.baseurl }}{{ author.profile }}'); background-position: center; background-repeat: no-repeat; background-size: cover; height: 25px; width: 25px; border-radius: 50%;"></div>
+        {% else %}
+        <div style="background: url('https://www.gravatar.com/avatar/{{ author.gravatar }}?s=250&d=mm&r=x'); height: 25px; width: 25px; border-radius: 50%;"></div>
+        {% endif %}
+        <span style="margin-left: 10px; margin-top: 0.24rem; font-size: 14px; font-weight: 500;">{{ post.title | truncate: 30, "..." }}</span>
+        {% capture weekago %}{{ "now" | date: "%s" | minus: 259200 }}{% endcapture %}
+        {% capture posttime %}{{ post.date | date: "%s" }}{% endcapture %}
+        {% if posttime > weekago %}
+        <span style="display: flex; align-items: center; margin-left: auto; font-weight: 700; padding: 0px 8px; border-radius: 5px; background: #ea4c89; color: #fff; font-size: 10px; margin-top: 0.24rem;">NEW</span>
+        {% else %}
+        <span style="display: flex; align-items: center; margin-left: auto; font-weight: 700; padding: 0px 8px; border-radius: 5px; background: #f3f3f6; color: #fff; font-size: 10px; margin-top: 0.24rem;">OLD</span>
+        {% endif %}
+      </div>
     </div>
   {% endfor %}
 </div>
