@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} - {{ site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' }}">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js" async></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/" class="logo">{{ site.title }}</a>
+      <!-- Add other navigation links here -->
+    </nav>
+  </header>
+  <main>
+    <div class="post-list-container">
+      {{ content }}
+    </div>
+  </main>
+  <footer>
+    <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}</p>
+  </footer>
+  <script src="{{ '/assets/js/load-more.js' }}"></script>
+</body>
+</html>
