@@ -1,14 +1,26 @@
 ---
 layout: default
 ---
+<div style="display: flex; justify-content: center; max-width: 50%; margin: 20px auto; text-align: center; padding-top: 30px;">
+  <span style="font-size: 64px;">Discover the world's top designers</span>
+</div>
+<div style="display: flex; justify-content: center; text-align: center;">
+  <span>Explore work from the most talented and accomplished designers ready to take on your next project</span>
+</div>
+<div class="search-bar">
+  <input type="text" placeholder="What are you looking for?">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+</div>
+
+<div id="suggestions-container"></div>
 
 <div class="post-list">
   {% for post in site.posts limit:10 %}
-    <article>
-      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-      <p>{{ post.excerpt }}</p>
-      <img data-src="{{ post.image }}" class="lazyload" alt="{{ post.title }}">
-    </article>
+    <div style="display: block;">
+      <div style="background: url('{{ site.baseurl }}{{ post.image }}'); border-radius: 10px; height: 240px; width: 320px; background-repeat: no-repeat; background-position: center; background-size: cover;">
+      </div>
+      <div style="display: inline-flex; margin-top: 8px;"><div style="background-color: #ccc; height: 25px; width: 25px; border-radius: 50%;"></div><span style="margin-left: 10px; margin-top: 5px;">{{ post.title }}</span></div>
+    </div>
   {% endfor %}
 </div>
 <button id="load-more">Load More</button>
