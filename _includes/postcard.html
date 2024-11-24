@@ -1,4 +1,4 @@
-<div class="post-item" style="display: block;" data-post-id="{{ post.id }}">
+<div class="post-item" style="display: block;" data-category="{{ post.categories | join: ' ' | slugify }}">
     <div style="background: url('{{ site.baseurl }}{{ post.image }}'); border-radius: 10px; height: 240px; width: 100%; background-repeat: no-repeat; background-position: center; background-size: cover;">
     </div>
     {% assign author = site.authors | where: "name", post.author | first %}    
@@ -55,7 +55,7 @@
       <div>
         {% if post.file %}
         <a href="{{ site.baseurl }}{{ post.file }}" class="download-button" download>Download Asset</a>
-      {% endif %}
+        {% endif %}
       </div>
     </div>
   </div>

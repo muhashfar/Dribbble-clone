@@ -404,6 +404,17 @@ header {
   white-space: nowrap;
 }
 
+.category-item.active {
+  background-color: #ea4c89;
+  color: #fff;
+  border-radius: 50px;
+}
+
+.category-item:hover {
+  color: #000000;
+}
+
+
 /* Hide scrollbar for WebKit browsers */
 .category::-webkit-scrollbar {
   display: none;

@@ -1,12 +1,9 @@
-<div class="post-tags">
-    {% for tag in post.tags %}
-      <span class="tag">{{ tag }}</span>
+<div class="category-container">
+  <div class="category">
+    <a href="#" class="category-item" data-category="all">All</a>
+    {% for category in site.categories %}
+      {% assign category_name = category | join: ' ' %}
+      <a href="#" class="category-item" data-category="{{ category_name | slugify }}">{{ category_name }}</a>
     {% endfor %}
   </div>
-  <div class="category-container">
-    <div class="category">
-      {% for category in site.categories %}
-        <a href="#"><span class="category-item">{{ category }}</span></a>
-      {% endfor %}
-    </div>
-  </div>
+</div>

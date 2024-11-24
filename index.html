@@ -1,5 +1,6 @@
 ---
 layout: default
+image: assets/images/banner.png
 ---
 <div class="header-title">
   <span class="header-text">Discover the world's top designers</span>
@@ -15,7 +16,7 @@ layout: default
 {% include post-category.html %}
 
 <!-- Post Card -->
-<div id="results-container" class="post-list">  
+<div class="post-list">  
   {% for post in site.posts %}
     {% include postcard.html %}
   {% endfor %}
