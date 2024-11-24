@@ -27,8 +27,6 @@ twitter_username: jekyllrb
 github_username:  jekyll
 
 collections:
-  tags:
-    output: true
   authors:
     output: true
 

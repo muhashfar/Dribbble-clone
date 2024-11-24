@@ -146,6 +146,56 @@ header {
   padding: 20px;
 }
 
+.post-item {
+  cursor: pointer;
+}
+
+/* Popup Window Styles */
+.post-popup {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.post-popup-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden; /* Ensure content does not overflow */
+}
+
+.post-popup-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px 0; /* Add some margin for better spacing */
+}
+
+.close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .post-list article:hover {
   transform: translateY(-5px);
 }
@@ -352,5 +402,9 @@ a {
   .post-list {
     grid-template-columns: 1fr;
     padding: 5px;
+  }
+
+  .post-popup-content {
+    width: 90%;
   }
 }

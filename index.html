@@ -11,7 +11,11 @@ layout: default
   <input id="search-input" type="text" placeholder="What are you looking for?">
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
 </div>
-
+<div class="post-tags">
+  {% for tag in post.tags %}
+    <span class="tag">{{ tag }}</span>
+  {% endfor %}
+</div>
 <div class="category-container">
   <div class="category">
     {% for category in site.categories %}
@@ -23,7 +27,7 @@ layout: default
 
 <div id="results-container" class="post-list">  
   {% for post in site.posts %}
-    <div style="display: block;">
+    <div class="post-item" style="display: block;" data-post-id="{{ post.id }}">
       <div style="background: url('{{ site.baseurl }}{{ post.image }}'); border-radius: 10px; height: 240px; width: 100%; background-repeat: no-repeat; background-position: center; background-size: cover;">
       </div>
       {% assign author = site.authors | where: "name", post.author | first %}    
@@ -42,6 +46,20 @@ layout: default
         <span style="display: flex; align-items: center; margin-left: auto; font-weight: 700; padding: 0px 8px; border-radius: 5px; background: #f3f3f6; color: #fff; font-size: 10px; margin-top: 0.24rem;">OLD</span>
         {% endif %}
       </div>
+      <!-- Hidden post details -->
+      <div class="post-details" style="display: none;">
+        <h2>{{ post.title }}</h2>
+        <img src="{{ site.baseurl }}{{ post.image }}" alt="{{ post.title }}">
+        <p>{{ post.desc }}</p>
+      </div>
     </div>
   {% endfor %}
+</div>
+
+<!-- Popup Window -->
+<div id="post-popup" class="post-popup">
+<div class="post-popup-content">
+<span class="close-button">&times;</span>
+<div id="popup-content"></div>
+</div>
 </div>
