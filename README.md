@@ -30,9 +30,13 @@ This project allows to create a dribble like Jekyll showcasing template for your
 ![screenshot](assets/images/banner.png)
 
 ### [+] Features
- - Dribbble shorts
- - Search feature added
- - SEO
+ - [x] Dribbble shorts
+ - [x] Search feature added
+ - [x] SEO
+ - [x] Author details
+ - [x] Shot Discription with gallery, buttons and shot description
+ - [x] Footer
+ - [ ] Netlify CMS
 
 ### [+] Credits 
 <a href="https://github.com/muhashfar/Dribbble-clone">muhashfar</a>
