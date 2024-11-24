@@ -30,13 +30,13 @@ This project allows to create a dribble like Jekyll showcasing template for your
 ![screenshot](assets/images/banner.png)
 
 ### [+] Features
- [x] Dribbble shorts
- [x] Search feature added
- [x] SEO
- [x] Author details
- [x] Shot Discription with gallery, buttons and shot description
- [x] Footer
- [ ] Netlify CMS
+ - [x] Dribbble shorts
+ - [x] Search feature added
+ - [x] SEO
+ - [x] Author details
+ - [x] Shot Discription with gallery, buttons and shot description
+ - [x] Footer
+ - [ ] Netlify CMS
 
 
 ### [+] To Do
