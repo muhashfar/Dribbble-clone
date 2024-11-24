@@ -38,13 +38,6 @@ This project allows to create a dribble like Jekyll showcasing template for your
  - [x] Footer
  - [ ] Netlify CMS
 
-
-### [+] To Do
- [] Netlify CMS
- [] Adding more flexiblity
- [] More organized serach
-
-
 ### [+] Credits 
 <a href="https://github.com/muhashfar/Dribbble-clone">muhashfar</a>
 
