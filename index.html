@@ -7,59 +7,22 @@ layout: default
 <div style="display: flex; justify-content: center; text-align: center;">
   <span>Explore work from the most talented and accomplished designers ready to take on your next project</span>
 </div>
-<div id="search-container" class="search-bar">
-  <input id="search-input" type="text" placeholder="What are you looking for?">
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-</div>
-<div class="post-tags">
-  {% for tag in post.tags %}
-    <span class="tag">{{ tag }}</span>
-  {% endfor %}
-</div>
-<div class="category-container">
-  <div class="category">
-    {% for category in site.categories %}
-      <a href="#"><span class="category-item">{{ category }}</span></a>
-    {% endfor %}
-  </div>
-</div>
 
+<!-- Search -->
+{% include search-input.html %}
 
+<!-- Post Category-->
+{% include post-category.html %}
+
+<!-- Post Card -->
 <div id="results-container" class="post-list">  
   {% for post in site.posts %}
-    <div class="post-item" style="display: block;" data-post-id="{{ post.id }}">
-      <div style="background: url('{{ site.baseurl }}{{ post.image }}'); border-radius: 10px; height: 240px; width: 100%; background-repeat: no-repeat; background-position: center; background-size: cover;">
-      </div>
-      {% assign author = site.authors | where: "name", post.author | first %}    
-      <div style="display: inline-flex; margin-top: 8px; width: 100%;">
-        {% if post.author %}
-        <div style="background: url('{{ site.baseurl }}{{ author.profile }}'); background-position: center; background-repeat: no-repeat; background-size: cover; height: 25px; width: 25px; border-radius: 50%;"></div>
-        {% else %}
-        <div style="background: url('https://www.gravatar.com/avatar/{{ author.gravatar }}?s=250&d=mm&r=x'); height: 25px; width: 25px; border-radius: 50%;"></div>
-        {% endif %}
-        <span style="margin-left: 10px; margin-top: 0.24rem; font-size: 14px; font-weight: 500;">{{ post.title | truncate: 30, "..." }}</span>
-        {% capture weekago %}{{ "now" | date: "%s" | minus: 259200 }}{% endcapture %}
-        {% capture posttime %}{{ post.date | date: "%s" }}{% endcapture %}
-        {% if posttime > weekago %}
-        <span style="display: flex; align-items: center; margin-left: auto; font-weight: 700; padding: 0px 8px; border-radius: 5px; background: #ea4c89; color: #fff; font-size: 10px; margin-top: 0.24rem;">NEW</span>
-        {% else %}
-        <span style="display: flex; align-items: center; margin-left: auto; font-weight: 700; padding: 0px 8px; border-radius: 5px; background: #f3f3f6; color: #fff; font-size: 10px; margin-top: 0.24rem;">OLD</span>
-        {% endif %}
-      </div>
-      <!-- Hidden post details -->
-      <div class="post-details" style="display: none;">
-        <h2>{{ post.title }}</h2>
-        <img src="{{ site.baseurl }}{{ post.image }}" alt="{{ post.title }}">
-        <p>{{ post.desc }}</p>
-      </div>
-    </div>
+    {% include postcard.html %}
   {% endfor %}
 </div>
 
 <!-- Popup Window -->
-<div id="post-popup" class="post-popup">
-<div class="post-popup-content">
-<span class="close-button">&times;</span>
-<div id="popup-content"></div>
-</div>
-</div>
+{% include popup.html %}
+
+<!-- Fullscreen Image Container -->
+{% include fullscreen-image.html %}
