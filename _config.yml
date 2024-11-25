@@ -5,7 +5,6 @@ url: "https://dribblev1.netlify.app" # the base hostname & protocol for your sit
 
 # Build settings
 markdown: kramdown
-theme: minima
 plugins:
   - jekyll-feed
   - jekyll-sitemap
